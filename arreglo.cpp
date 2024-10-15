@@ -4,8 +4,9 @@
 #include "ordenamiento.h"
 using namespace std;
 
-int main() {
-    int n;
+int main() 
+{
+    int n, elemento;
     cout << "Cuantos elementos deseas ingresar? ";
     cin >> n;
 
@@ -21,7 +22,7 @@ int main() {
     }
     cout << endl;
 
-    // ordenar el arreglo usando el metodo Quick Sort
+    // ORDENANDO EL ARREGLO CON EL METODO QUICKSORT
     quickSort(numeros, 0, n-1);
 
     cout << "Los numeros ordenados son: ";
@@ -29,6 +30,18 @@ int main() {
         cout << numeros[i] << " ";
     }
     cout << endl;
+    
+    //IMPLEMENTANDO LA BUSQUEDA BINARIA
+    cout<<"Ingrese el elemento a buscar: ";
+    cin >> elemento;
+
+    int resultado = busquedaBinaria(numeros, 0, n - 1, elemento);
+
+    if (resultado != -1) {
+        cout << "Elemento encontrado en el indice: " << resultado << endl;
+    } else {
+        cout << "Elemento no encontrado en el arreglo." << endl;
+    }
 
     return 0;
 }
